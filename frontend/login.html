@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Shop | Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="auth-shell">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <a href="index.html">Luxe Atelier</a>
+      </div>
+      <h1>Welcome back</h1>
+      <p>Enter your credentials to access your account and orders.</p>
+      <form id="loginForm" class="auth-form">
+        <label>Email</label>
+        <input id="loginEmail" type="email" placeholder="you@example.com" required />
+        <label>Password</label>
+        <input id="loginPassword" type="password" placeholder="••••••••" required />
+        <button type="submit" class="button button-primary block">Login</button>
+      </form>
+      <p class="auth-footer">New here? <a href="signup.html">Create an account</a></p>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="js/auth.js" defer></script>
+</body>
+</html>

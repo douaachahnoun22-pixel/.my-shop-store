@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Shop | Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://kit.fontawesome.com/a2d9cfd84b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header simple-header">
+      <div class="brand-row">
+        <a class="brand" href="index.html">Luxe Atelier</a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="login.html">Login</a>
+          <a class="nav-cta nav-ghost" href="signup.html">Sign Up</a>
+        </nav>
+      </div>
+      <div class="page-title">
+        <h1>All Collections</h1>
+        <p>Browse trending handbags, jewelry, wardrobe accents and more.</p>
+      </div>
+    </header>
+
+    <main class="section-grid product-page-grid">
+      <aside class="filter-panel soft-border">
+        <h2>Filter Products</h2>
+        <div class="filter-group">
+          <label>Category</label>
+          <select id="categoryFilter">
+            <option value="">All</option>
+            <option value="Handbags">Handbags</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Jewelry">Jewelry</option>
+          </select>
+        </div>
+        <div class="filter-group range-group">
+          <span>Price Range</span>
+          <div class="range-fields">
+            <input id="priceMin" type="number" min="0" placeholder="Min" />
+            <input id="priceMax" type="number" min="0" placeholder="Max" />
+          </div>
+        </div>
+        <div class="filter-group">
+          <label><input type="checkbox" id="bestSellerFilter" /> Best sellers only</label>
+        </div>
+        <button id="applyFilters" class="button button-primary block">Apply</button>
+      </aside>
+
+      <section class="products-grid" id="productsGrid"></section>
+    </main>
+
+    <footer class="site-footer simple-footer">
+      <p>&copy; 2026 Luxe Atelier</p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/products.js" defer></script>
+</body>
+</html>

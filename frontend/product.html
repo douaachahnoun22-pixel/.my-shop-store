@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Shop | Product Details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://kit.fontawesome.com/a2d9cfd84b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header simple-header">
+      <div class="brand-row">
+        <a class="brand" href="index.html">Luxe Atelier</a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="cart.html">Cart</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section-grid detail-grid">
+      <section class="detail-gallery" id="galleryContainer"></section>
+      <section class="detail-info soft-border">
+        <div class="detail-meta">
+          <span id="productCategory"></span>
+          <h1 id="productName"></h1>
+          <p class="product-price" id="productPrice"></p>
+          <div class="rating-block">
+            <span id="productRating"></span>
+            <span id="productReviews"></span>
+          </div>
+        </div>
+        <p id="productDescription" class="product-description"></p>
+        <div class="detail-actions">
+          <button id="addToCartButton" class="button button-primary">Add to Cart</button>
+          <button id="buyNowButton" class="button button-secondary">Buy Now</button>
+        </div>
+        <div class="suggestion-panel">
+          <h2>Suggested similar products</h2>
+          <div id="suggestions" class="cards-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer simple-footer">
+      <p>&copy; 2026 Luxe Atelier</p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

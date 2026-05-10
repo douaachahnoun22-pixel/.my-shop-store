@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Shop | Sign Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="auth-shell">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <a href="index.html">Luxe Atelier</a>
+      </div>
+      <h1>Create your profile</h1>
+      <p>Enjoy fast checkout, order tracking and wish list management.</p>
+      <form id="signupForm" class="auth-form">
+        <label>Name</label>
+        <input id="signupName" type="text" placeholder="Your full name" required />
+        <label>Email</label>
+        <input id="signupEmail" type="email" placeholder="you@example.com" required />
+        <label>Phone</label>
+        <input id="signupPhone" type="tel" placeholder="+1 234 567 890" required />
+        <label>Password</label>
+        <input id="signupPassword" type="password" placeholder="Create a password" required />
+        <label>Confirm Password</label>
+        <input id="signupConfirmPassword" type="password" placeholder="Confirm password" required />
+        <button type="submit" class="button button-primary block">Create Account</button>
+      </form>
+      <p class="auth-footer">Already joined? <a href="login.html">Sign in</a></p>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="js/auth.js" defer></script>
+</body>
+</html>

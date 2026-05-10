@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luxe Atelier | Launch</title>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; background:#f7f7f5; color:#121212; display:flex; align-items:center; justify-content:center; min-height:100vh; }
+    .redirect-card { max-width:520px; background:#fff; padding:32px; border-radius:28px; box-shadow:0 30px 80px rgba(0,0,0,0.08); text-align:center; }
+    .redirect-card h1 { margin:0 0 16px; font-size:2.2rem; }
+    .redirect-card p { margin:0 0 24px; color:#555; line-height:1.7; }
+    .redirect-card a { display:inline-flex; align-items:center; gap:10px; padding:14px 24px; border-radius:999px; background:#121212; color:#fff; text-decoration:none; font-weight:600; }
+  </style>
+</head>
+<body>
+  <div class="redirect-card">
+    <h1>Welcome to Luxe Atelier</h1>
+    <p>This project now uses the professional frontend structure in <strong>frontend/</strong> and the Flask backend in <strong>backend/</strong>. Open the styled storefront below.</p>
+    <a href="frontend/index.html">Open the Home Page</a>
+  </div>
+</body>
+</html>
+      name: name,
+      price: parseFloat(price),
+      image: image || "https://via.placeholder.com/50?text=Product"
+    };
+
+    products.push(product);
+    saveProducts();
+    displayProducts();
+
+    document.getElementById("productName").value = "";
+    document.getElementById("productPrice").value = "";
+    document.getElementById("productImage").value = "";
+  }
+
+  function deleteProduct(id) {
+    products = products.filter(p => p.id !== id);
+    saveProducts();
+    displayProducts();
+  }
+
+  function editProduct(id) {
+    const product = products.find(p => p.id === id);
+    if (product) {
+      document.getElementById("productName").value = product.name;
+      document.getElementById("productPrice").value = product.price;
+      document.getElementById("productImage").value = product.image;
+      deleteProduct(id);
+      document.getElementById("productName").focus();
+    }
+  }
+
+  function displayProducts() {
+    const productList = document.getElementById("productList");
+    const emptyMsg = document.getElementById("emptyMsg");
+    productList.innerHTML = "";
+
+    if (products.length === 0) {
+      emptyMsg.style.display = "block";
+      return;
+    }
+
+    emptyMsg.style.display = "none";
+
+    products.forEach(product => {
+      const div = document.createElement("div");
+      div.classList.add("product");
+      div.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" class="product-img" onerror="this.src='https://via.placeholder.com/50?text=Product'">
+        <div class="product-info">
+          <strong>${product.name}</strong><br>
+          <span style="color: #2c3e50; font-weight: bold;">$${product.price.toFixed(2)}</span>
+        </div>
+        <div class="product-buttons">
+          <button class="btn-small btn-edit" onclick="editProduct(${product.id})">Edit</button>
+          <button class="btn-small" onclick="deleteProduct(${product.id})">Delete</button>
+        </div>
+      `;
+      productList.appendChild(div);
+    });
+  }
+
+  function saveProducts() {
+    localStorage.setItem('myShopProducts', JSON.stringify(products));
+  }
+</script>
+
+</body>
+</html>

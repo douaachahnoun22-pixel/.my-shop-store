@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Shop | Checkout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://kit.fontawesome.com/a2d9cfd84b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header simple-header">
+      <div class="brand-row">
+        <a class="brand" href="index.html">Luxe Atelier</a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="cart.html">Cart</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section-grid checkout-grid">
+      <section class="checkout-form soft-border">
+        <div class="section-label">
+          <span>Checkout</span>
+          <h2>Complete your order securely</h2>
+        </div>
+        <form id="checkoutForm">
+          <div class="field-row">
+            <label>Email</label>
+            <input id="checkoutEmail" type="email" required />
+          </div>
+          <div class="field-row">
+            <label>Phone</label>
+            <input id="checkoutPhone" type="tel" required />
+          </div>
+          <div class="field-row">
+            <label>Shipping Address</label>
+            <textarea id="checkoutAddress" rows="4" required></textarea>
+          </div>
+          <div class="field-row">
+            <label>Comments</label>
+            <textarea id="checkoutComments" rows="3" placeholder="Add special delivery notes (optional)"></textarea>
+          </div>
+          <button type="submit" class="button button-primary block">Place Order</button>
+        </form>
+      </section>
+      <aside class="order-preview soft-border">
+        <h3>Order preview</h3>
+        <div id="orderPreview"></div>
+        <div class="summary-row total-row"><span>Total</span><strong id="checkoutTotal">$0.00</strong></div>
+      </aside>
+    </main>
+
+    <footer class="site-footer simple-footer">
+      <p>&copy; 2026 Luxe Atelier</p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/cart.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Shop | Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <header class="admin-header soft-border">
+      <div>
+        <h1>Admin Dashboard</h1>
+        <p>Manage products, orders, users and offers.</p>
+      </div>
+      <div>
+        <button id="adminLogout" class="button button-secondary">Logout</button>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <section class="admin-panel soft-border">
+        <h2>Quick Actions</h2>
+        <div class="admin-actions">
+          <button id="loadProducts" class="button button-primary">Refresh Products</button>
+          <button id="loadOrders" class="button button-secondary">View Orders</button>
+          <button id="loadUsers" class="button button-secondary">View Users</button>
+          <button id="loadNotifications" class="button button-secondary">View Notifications</button>
+        </div>
+      </section>
+
+      <section class="admin-grid">
+        <article class="admin-card soft-border">
+          <h3>Add New Product</h3>
+          <div class="field-row">
+            <label>Name</label>
+            <input id="newName" placeholder="Product name" />
+          </div>
+          <div class="field-row">
+            <label>Category</label>
+            <select id="newCategory">
+              <option>Handbags</option>
+              <option>Accessories</option>
+              <option>Jewelry</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <label>Price</label>
+            <input id="newPrice" type="number" min="0" step="0.01" />
+          </div>
+          <div class="field-row">
+            <label>Image URL</label>
+            <input id="newImage" placeholder="https://..." />
+          </div>
+          <div class="field-row">
+            <label>Description</label>
+            <textarea id="newDescription" rows="3"></textarea>
+          </div>
+          <div class="field-row two-col">
+            <div><label>Stock</label><input id="newStock" type="number" min="0" value="10" /></div>
+            <div><label>Best seller</label><input id="newBestSeller" type="checkbox" /></div>
+          </div>
+          <button id="createProduct" class="button button-primary block">Add product</button>
+        </article>
+
+        <article class="admin-card soft-border" id="adminTableSection">
+          <h3>Live Management</h3>
+          <div id="adminList"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/admin.js" defer></script>
+</body>
+</html>
